@@ -1,1 +1,2 @@
-# -Software-University-SoftUni
+# Software-University-SoftUni
+https://softuni.bg/trainings/courses
