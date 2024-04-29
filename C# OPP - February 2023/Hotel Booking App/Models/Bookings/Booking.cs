@@ -76,7 +76,7 @@ namespace BookingApp.Models.Bookings
             sb.AppendLine ($"Booking number: {BookingNumber}");
             sb.AppendLine($"Room type: {Room.GetType().Name}");
             sb.AppendLine($"Adults: {AdultsCount} Children: {ChildrenCount}");
-            sb.AppendLine($"Total amount paid: {TotalPaid():F2} $");
+            sb.AppendLine($"Total amount paid: {TotalPaid():F} $");
 
             return sb.ToString().TrimEnd();
         }

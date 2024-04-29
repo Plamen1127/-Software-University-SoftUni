@@ -1,0 +1,15 @@
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\bin\Debug\net6.0\BookingApp.exe
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\bin\Debug\net6.0\BookingApp.deps.json
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\bin\Debug\net6.0\BookingApp.runtimeconfig.json
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\bin\Debug\net6.0\BookingApp.dll
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\bin\Debug\net6.0\BookingApp.pdb
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.csproj.AssemblyReference.cache
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.AssemblyInfoInputs.cache
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.AssemblyInfo.cs
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.csproj.CoreCompileInputs.cache
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.dll
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\refint\BookingApp.dll
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.pdb
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\BookingApp.genruntimeconfig.cache
+D:\SoftUni\Software-University-SoftUni\C# OPP - February 2023\Hotel Booking App\obj\Debug\net6.0\ref\BookingApp.dll
