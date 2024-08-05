@@ -40,7 +40,7 @@ namespace TravelAgency.Utilitis
             xmlNamespaces.Add(string.Empty, string.Empty);
 
             using StringWriter stringWriter = new StringWriter(sb);
-            xmlSerializer.Serialize(stringWriter, obj);
+            xmlSerializer.Serialize(stringWriter, obj, xmlNamespaces);
 
             return sb.ToString().TrimEnd();
         }
