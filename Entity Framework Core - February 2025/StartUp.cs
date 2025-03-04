@@ -16,9 +16,15 @@ namespace SoftUni
             //Console.WriteLine(GetEmployeesFullInformation(contex)); //problem 3
             //Console.WriteLine(GetEmployeesWithSalaryOver50000(context)); //problem 4
             //Console.WriteLine(GetEmployeesFromResearchAndDevelopment(context)); //problem 5
-           // Console.WriteLine(AddNewAddressToEmployee(context)); //problem 6
+            // Console.WriteLine(AddNewAddressToEmployee(context)); //problem 6
             //Console.WriteLine(GetEmployeesInPeriod(context)); //problem 7
-            Console.WriteLine(GetAddressesByTown(context)); //problem 8
+            //Console.WriteLine(GetAddressesByTown(context)); //problem 8
+            //Console.WriteLine(GetEmployee147(context)); //problem 9
+            //Console.WriteLine(GetDepartmentsWithMoreThan5Employees(context)); //problem 10
+            //Console.WriteLine(GetLatestProjects(context)); //problem 11
+            //Console.WriteLine(IncreaseSalaries(context)); //problem 12
+            Console.WriteLine(GetEmployeesByFirstNameStartingWithSa(context)); //problem 13
+
 
         }
 
@@ -81,15 +87,15 @@ namespace SoftUni
         {
 
             var employees = context.Employees
-                .Where(e=>e.Department.Name == "Research and Development")
-                .Select(e=> new
+                .Where(e => e.Department.Name == "Research and Development")
+                .Select(e => new
                 {
                     e.FirstName,
                     e.LastName,
                     e.Department,
                     e.Salary
                 })
-                .OrderBy(e=>e.Salary)
+                .OrderBy(e => e.Salary)
                 .ThenByDescending(e => e.FirstName)
                 .ToList();
 
@@ -123,7 +129,7 @@ namespace SoftUni
             var employee = context.Employees
                 .OrderByDescending(e => e.AddressId)
                 .Take(10)
-                .Select(e=> e.Address.AddressText) 
+                .Select(e => e.Address.AddressText)
                 .ToList();
 
             return string.Join(Environment.NewLine, employee);
@@ -148,20 +154,20 @@ namespace SoftUni
                         EndDay = p.Project.EndDate.HasValue ? p.Project.EndDate.Value.ToString("M/d/yyyy h:mm:ss tt") :
                         "not finished"
                     })
-                    
+
                 });
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (var e in result) 
-            { 
+            foreach (var e in result)
+            {
                 sb.AppendLine($"{e.EmployeeNames} - Manager: {e.ManigerNames}");
                 if (e.Projects.Any())
                 {
                     foreach (var p in e.Projects)
                     {
                         sb.AppendLine($"--{p.ProjectName} - {p.StartDate:M/d/yyyy h:mm:ss tt} - {p.EndDay}");
-                        
+
                     }
                 }
             }
@@ -199,5 +205,143 @@ namespace SoftUni
             return sb.ToString().TrimEnd();
         }
 
+        // problem 9
+        public static string GetEmployee147(SoftUniContext context)
+        {
+            var getEmployee = context.Employees
+                .Where(e => e.EmployeeId == 147)
+                .Select(e => new
+                {
+                    FirrstName = e.FirstName,
+                    LastName = e.LastName,
+                    JobTitle = e.JobTitle,
+                    Projectse = e.EmployeesProjects
+                    .Select(p => p.Project.Name)
+                   
+                })
+                .FirstOrDefault();
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"{getEmployee.FirrstName} {getEmployee.LastName} - {getEmployee.JobTitle}");
+
+            foreach (var e in getEmployee.Projectse.OrderBy(p => p))
+            {
+                sb.AppendLine(e);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        // problem 10
+        public static string GetDepartmentsWithMoreThan5Employees(SoftUniContext context)
+        {
+            var result = context.Departments
+                .Where(d => d.Employees.Count > 5)
+                .Select(d => new
+                {
+                    DepartmentName = d.Name,
+                    ManagerFirstName = d.Manager.FirstName,
+                    ManagerLastName = d.Manager.LastName,
+                    Employees = d.Employees
+                    .Select(e => new
+                    {
+                        FirstName = e.FirstName,
+                        LastName = e.LastName,
+                        JobTaite = e.JobTitle,
+                    })
+                })
+                .OrderBy(e => e.Employees.Count());
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var d in result)
+            {
+                sb.AppendLine($"{d.DepartmentName} - {d.ManagerFirstName} {d.ManagerLastName}");
+
+                foreach(var e in d.Employees.OrderBy(e=>e.FirstName).ThenBy(e => e.LastName))
+                {
+                    sb.AppendLine($"{e.FirstName} {e.LastName} - {e.JobTaite}");
+                }
+            }
+
+            return sb.ToString().TrimEnd();
+                
+        }
+
+        // problem 11
+        public static string GetLatestProjects(SoftUniContext context)
+        {
+            var result = context.Projects
+                .OrderByDescending(p => p.StartDate)
+                .Select(p => new
+                {
+                    Name = p.Name,
+                    Description = p.Description,
+                    StartDate = p.StartDate
+                })
+                .Take(10);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var d in result.OrderBy(p=>p.Name))
+            {
+                sb.AppendLine($"{d.Name}");
+                sb.AppendLine($"{d.Description}");
+                sb.AppendLine($"{d.StartDate:M/d/yyyy h:mm:ss tt}");
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        // problem 12
+        public static string IncreaseSalaries(SoftUniContext context)
+        {
+
+            var result = context.Employees
+                .Where(e => e.Department.Name == "Engineering" || e.Department.Name == "Tool Design" || e.Department.Name == "Marketing" || e.Department.Name == "Information Services")
+                .Select(e => new
+                {
+                    e.FirstName,
+                    e.LastName,
+                    Selary = e.Salary * 1.12m,
+                })
+                .OrderBy(e => e.FirstName)
+                .ThenBy(e => e.LastName);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var e in result)
+            {
+                sb.AppendLine($"{e.FirstName} {e.LastName} (${e.Selary:f2})");
+            }
+
+            return sb .ToString().TrimEnd();
+        }
+
+        // problem 13
+        public static string GetEmployeesByFirstNameStartingWithSa(SoftUniContext context)
+        {
+            var result = context.Employees
+                .Where(e=>e.FirstName.StartsWith("Sa"))
+                .Select(e => new
+                {
+                    e.FirstName, 
+                    e.LastName,
+                    e.JobTitle,
+                    e.Salary
+                })
+                .OrderBy(e => e.FirstName)
+                .ThenBy(e => e.LastName);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var e in result)
+            {
+                sb.AppendLine($"{e.FirstName} {e.LastName} - {e.JobTitle} - (${e.Salary:f2})");
+            }
+
+            return sb.ToString().TrimEnd();
+        }
     }
 }
