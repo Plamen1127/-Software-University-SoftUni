@@ -23,7 +23,9 @@ namespace SoftUni
             //Console.WriteLine(GetDepartmentsWithMoreThan5Employees(context)); //problem 10
             //Console.WriteLine(GetLatestProjects(context)); //problem 11
             //Console.WriteLine(IncreaseSalaries(context)); //problem 12
-            Console.WriteLine(GetEmployeesByFirstNameStartingWithSa(context)); //problem 13
+            //Console.WriteLine(GetEmployeesByFirstNameStartingWithSa(context)); //problem 13
+            //Console.WriteLine(DeleteProjectById(context)); //problem 14
+            Console.WriteLine(RemoveTown(context)); //problem 15
 
 
         }
@@ -343,5 +345,51 @@ namespace SoftUni
 
             return sb.ToString().TrimEnd();
         }
+
+        // problem 14
+        public static string DeleteProjectById(SoftUniContext context)
+        {
+            var epToDel = context.EmployeesProjects
+                .Where(p => p.ProjectId == 2);
+
+            context.EmployeesProjects.RemoveRange(epToDel);
+
+            var projectToDel = context.Projects.Find(2);
+
+            if (projectToDel != null) 
+            {
+                context.Projects.RemoveRange(projectToDel);
+                context.SaveChanges();
+            }
+            var project = context.Projects
+           .Select(p => p.Name)
+           .Take(10);
+
+            return string.Join(Environment.NewLine, project);
+            return "";
+        }
+
+        // problem 15
+        public static string RemoveTown(SoftUniContext context)
+        {
+            var addressToDell = context.Addresses
+                .Where(a=>a.Town.Name== "Seattle")
+                .ToList();
+
+            context.Addresses.RemoveRange(addressToDell);
+
+            var townToDell = context.Towns
+                .Where(t => t.Name == "Seattle")
+            .FirstOrDefault();
+
+            
+                context.Towns.Remove(townToDell);
+                context.SaveChanges();
+            
+
+            return $"{addressToDell.Count} addresses in Seattle were deleted";
+        }
     }
-}
+
+    }
+
