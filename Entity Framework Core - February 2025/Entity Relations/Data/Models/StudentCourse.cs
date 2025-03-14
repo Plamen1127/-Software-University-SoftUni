@@ -9,15 +9,16 @@ namespace P01_StudentSystem.Data.Models
 {
     public class StudentCourse
     {
-        public int StudenId { get; set; }
+        public int StudentId { get; set; }
 
-        [ForeignKey(nameof(StudenId))]
-        public virtual Student Student { get; set; }
+        [ForeignKey(nameof(StudentId))]
+        public virtual Student? Student { get; set; }
 
         public int CourseId { get; set; }
 
-        [ForeignKey(nameof(CourseId))]
-        public virtual Course Course { get; set; }
+        [ForeignKey(nameof(CourseId))]  
+        public Course? Course { get; set; }
 
+        public virtual ICollection<StudentCourse>? StudentsCourses { get; set; }
     }
 }

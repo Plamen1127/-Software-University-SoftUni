@@ -8,16 +8,21 @@ using System.Threading.Tasks;
 
 namespace P01_StudentSystem.Data.Models
 {
-    public class Resource
+    public class Homework
     {
         [Key]
-        public int ResourceId { get; set; }
-        [MaxLength(50)]
-        public string? Name { get; set; }
+        public int HomeworkId { get; set; }
 
-        public string? Url  { get; set; }
+        public string? Content { get; set; }
 
-        public ResourceType ResourceType { get; set; }
+        public ContentType ContentType { get; set; }
+
+        public DateTime SubmissionTime { get; set; }
+
+        public int StudentId { get; set; }
+
+        [ForeignKey(nameof(StudentId))]
+        public Student? Student { get; set; }
 
         public int CourseId { get; set; }
 
@@ -25,11 +30,10 @@ namespace P01_StudentSystem.Data.Models
         public Course? Course { get; set; }
     }
 
-    public enum ResourceType
+    public enum ContentType
     {
-        Video, 
-        Presentation, 
-        Document, 
-        Other
+        Application,
+        Pdf,
+        Zip
     }
 }
