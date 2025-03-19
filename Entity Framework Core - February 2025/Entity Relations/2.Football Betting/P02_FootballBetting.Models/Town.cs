@@ -11,6 +11,11 @@ namespace P02_FootballBetting.Models
 {
     public class Town
     {
+        public Town()
+        {
+                Players = new List<Player>();   
+        }
+
         [Key]
         public int TownId { get; set; }
         
@@ -20,6 +25,11 @@ namespace P02_FootballBetting.Models
 
         [ForeignKey(nameof(CountryId))]
         public int CountryId { get; set; }
+
         public virtual Country Country { get; set; } = null!;
+
+        public virtual ICollection<Player> Players { get; set; }
+
+
     }
 } 

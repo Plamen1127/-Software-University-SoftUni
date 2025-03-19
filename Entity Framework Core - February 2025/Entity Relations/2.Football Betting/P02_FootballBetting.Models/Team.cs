@@ -11,8 +11,15 @@ namespace P02_FootballBetting.Models
 {
     public class Team
     {
+        public Team()
+        {
+            Players = new HashSet<Player>();
+            HomeGames = new HashSet<Game>();
+            AwayGames = new HashSet<Game>();
+        }
+
         [Key]
-        public int TeamId  { get; set; }
+        public int TeamId { get; set; }
 
         [MaxLength(ValidationConstants.TeamNameMaxLegth)]
         public string Name { get; set; } = null!;
@@ -38,6 +45,13 @@ namespace P02_FootballBetting.Models
         [ForeignKey(nameof(SecondaryKitColorId))]
         public int SecondaryKitColorId { get; set; }
         public virtual Color SecundaryColor { get; set; } = null!;
+
+
+
+
+        public virtual ICollection<Player> Players { get; set; }
+        public virtual ICollection<Game> HomeGames { get; set; }
+        public virtual ICollection<Game> AwayGames { get; set; }
     }
 
 }

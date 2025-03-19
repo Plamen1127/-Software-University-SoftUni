@@ -21,6 +21,9 @@ namespace P02_FootballBetting.Data
         public DbSet<Position> Positions { get; set; } = null!;
         public DbSet<Color> Colors { get; set; } = null!;
         public DbSet<Team> Teams { get; set; } = null!;
+        public DbSet<Bet> Bets { get; set; } = null!;
+        public DbSet<Player> Players { get; set; } = null!;
+        public DbSet<PlayerStatistic> PlayersStatistics { get; set; } = null!;
 
        
 
