@@ -13,23 +13,26 @@ namespace P02_FootballBetting.Models
     {
         public Town()
         {
-                Players = new List<Player>();   
+            Players = new List<Player>();
+            Teams = new List<Team>();
         }
 
         [Key]
         public int TownId { get; set; }
-        
+
 
         [MaxLength(ValidationConstants.TownNameMaxLegth)]
+
         public string Name { get; set; } = null!;
 
-        [ForeignKey(nameof(CountryId))]
+        [ForeignKey(nameof(Country))]
         public int CountryId { get; set; }
-
         public virtual Country Country { get; set; } = null!;
 
+
         public virtual ICollection<Player> Players { get; set; }
+        public virtual ICollection<Team> Teams { get; set; }
 
 
     }
-} 
+}

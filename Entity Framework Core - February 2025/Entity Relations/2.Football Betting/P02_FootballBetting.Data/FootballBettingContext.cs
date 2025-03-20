@@ -13,6 +13,17 @@ namespace P02_FootballBetting.Data
 {
     public class FootballBettingContext : DbContext
     {
+        public FootballBettingContext()
+        {
+
+        }
+
+        public FootballBettingContext(DbContextOptions options)
+            : base(options)
+        {
+
+        }
+
         private const string ConnectionString = "Server=localhost\\SQLEXPRESS06;Database=StudentSystem;Integrated Security=True;";
 
         public DbSet<Country> Countries { get; set; } = null!;
@@ -25,18 +36,51 @@ namespace P02_FootballBetting.Data
         public DbSet<Player> Players { get; set; } = null!;
         public DbSet<PlayerStatistic> PlayersStatistics { get; set; } = null!;
 
-       
-
-
-
-        // public StudentSystemContext(DbContextOptions dbContextOptions) : base(dbContextOptions)
-        // {
-        // }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionString);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<PlayerStatistic>(entity =>
+            {
+                entity.HasKey(ps => new { ps.GameId, ps.PlayerId });
+            });
+            modelBuilder.Entity<Team>(entity =>
+            {
+                entity
+                .HasOne(t => t.PrimaryKitColor)
+                .WithMany(c => c.PrimaryKitTeams)
+                .HasForeignKey(t => t.PrimaryKitColorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                entity
+                .HasOne(t => t.SecondaryKitColor)
+                .WithMany(c => c.SecondaryKitTeams)
+                .HasForeignKey(t => t.SecondaryKitColorId)
+                .OnDelete(DeleteBehavior.NoAction);
+            });
+
+            modelBuilder.Entity<Game>(entity =>
+            {
+                entity
+                .HasOne(g => g.HomeTeam)
+                .WithMany(t => t.HomeGames)
+                .HasForeignKey(g => g.HomeTeamId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                entity
+                .HasOne(g => g.AwayTeam)
+                .WithMany(t => t.AwayGames)
+                .HasForeignKey(g => g.AwayTeamId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            });
+        }
+
     }
 }
+

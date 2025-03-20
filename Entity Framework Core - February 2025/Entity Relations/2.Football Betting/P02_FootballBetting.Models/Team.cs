@@ -36,17 +36,20 @@ namespace P02_FootballBetting.Models
         public decimal Budget { get; set; }
 
 
-        [ForeignKey(nameof(PrimaryKitColorId))]
+        [ForeignKey(nameof(PrimaryKitColor))]
         public int PrimaryKitColorId { get; set; }
-        public virtual Color PrimaryColor { get; set; } = null!;
+        public virtual Color PrimaryKitColor { get; set; } = null!;
 
 
 
-        [ForeignKey(nameof(SecondaryKitColorId))]
+        [ForeignKey(nameof(SecondaryKitColor))]
         public int SecondaryKitColorId { get; set; }
-        public virtual Color SecundaryColor { get; set; } = null!;
+        public virtual Color SecondaryKitColor { get; set; } = null!;
 
 
+        [ForeignKey(nameof(Town))]
+        public int TownId { get; set; }
+        public virtual Town Town { get; set; } = null!;
 
 
         public virtual ICollection<Player> Players { get; set; }

@@ -10,6 +10,11 @@ namespace P02_FootballBetting.Models
 {
     public class User
     {
+        public User()
+        {
+            Bets = new List<Bet>();
+        }
+
         [Key]
         public int UserId { get; set; }
 
@@ -29,5 +34,7 @@ namespace P02_FootballBetting.Models
         public string Email { get; set; } = null!;
 
         public decimal Balance { get; set; }
+
+        public virtual ICollection<Bet> Bets { get; set; }
     }
 }

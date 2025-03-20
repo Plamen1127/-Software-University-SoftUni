@@ -1,0 +1,14 @@
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\bin\Debug\net6.0\P02_FootballBetting.deps.json
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\bin\Debug\net6.0\P02_FootballBetting.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\bin\Debug\net6.0\P02_FootballBetting.pdb
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.AssemblyInfo.cs
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\refint\P02_FootballBetting.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.pdb
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\ref\P02_FootballBetting.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\bin\Debug\net6.0\P02_FootballBetting.runtimeconfig.json
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting\obj\Debug\net6.0\P02_FootballBetting.genruntimeconfig.cache

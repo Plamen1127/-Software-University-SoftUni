@@ -26,17 +26,18 @@ namespace P02_FootballBetting.Models
 
         public bool IsInjured { get; set; }
 
-        [ForeignKey(nameof(PositionId))]
+
+        [ForeignKey(nameof(Position))]
         public int PositionId { get; set; }
         public virtual Position Position { get; set; } = null!;
 
 
-        [ForeignKey(nameof(TeamId))]
+        [ForeignKey(nameof(Team))]
         public int TeamId { get; set; }
         public virtual Team Team { get; set; } = null!;
 
 
-        [ForeignKey(nameof(TownId))]
+        [ForeignKey(nameof(Town))]
         public int TownId { get; set; }
         public virtual Town Town { get; set; } = null!;
 

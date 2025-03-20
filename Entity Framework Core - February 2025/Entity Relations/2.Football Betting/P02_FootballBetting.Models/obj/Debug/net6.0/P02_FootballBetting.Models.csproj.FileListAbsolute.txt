@@ -1,0 +1,17 @@
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Models.deps.json
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Models.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Models.pdb
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Common.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Common.pdb
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.AssemblyInfo.cs
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_Foot.F6D0B94E.Up2Date
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\refint\P02_FootballBetting.Models.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.pdb
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\ref\P02_FootballBetting.Models.dll
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\bin\Debug\net6.0\P02_FootballBetting.Models.runtimeconfig.json
+C:\Users\USER\source\repos\P02_FootballBetting\P02_FootballBetting.Models\obj\Debug\net6.0\P02_FootballBetting.Models.genruntimeconfig.cache

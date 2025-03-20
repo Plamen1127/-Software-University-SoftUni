@@ -9,12 +9,12 @@ namespace P02_FootballBetting.Models
 {
     public class PlayerStatistic
     {
-        [ForeignKey(nameof(GameId))]
+        [ForeignKey(nameof(Game))]
         public int GameId { get; set; }
         public virtual Game Game { get; set; } = null!;
 
 
-        [ForeignKey(nameof(PlayerId))]
+        [ForeignKey(nameof(Player))]
         public int PlayerId { get; set; }
         public virtual Player Player { get; set; } = null!;
 
