@@ -13,7 +13,7 @@ namespace MusicHub.Data.Models
     {
         public Song()
         {
-            SongsPerformers = new HashSet<SongPerformer>();
+            SongPerformers = new HashSet<SongPerformer>();
         }
 
         [Key]
@@ -36,7 +36,7 @@ namespace MusicHub.Data.Models
 
 
         [ForeignKey(nameof(Album))]
-        public int AlbumId  { get; set; }
+        public int? AlbumId  { get; set; }
         public virtual Album Album { get; set; }
 
 
@@ -48,7 +48,7 @@ namespace MusicHub.Data.Models
         [Required]
         public decimal Price  { get; set; }
 
-        public virtual ICollection<SongPerformer> SongsPerformers { get; set; }
+        public virtual ICollection<SongPerformer> SongPerformers { get; set; }
 
 
 
